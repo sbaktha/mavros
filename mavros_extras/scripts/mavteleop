@@ -100,8 +100,9 @@ rc_channels = {
 }
 
 def arm(args, state):
+    # TODO: Set key to false value here for production
     try:
-        command.arming(value=state)
+        command.arming(value=state, key="ok")
     except rospy.ServiceException as ex:
         fault(ex)
 
