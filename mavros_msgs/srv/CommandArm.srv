@@ -1,0 +1,7 @@
+# Type for an arm command
+
+bool value
+string key
+---
+bool success
+uint8 result

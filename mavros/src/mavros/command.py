@@ -20,7 +20,7 @@ __all__ = (
 import rospy
 import mavros
 
-from mavros_msgs.srv import CommandLong, CommandInt, CommandBool, CommandHome, CommandTOL, CommandTriggerControl, CommandTriggerInterval
+from mavros_msgs.srv import CommandArm, CommandLong, CommandInt, CommandBool, CommandHome, CommandTOL, CommandTriggerControl, CommandTriggerInterval
 
 
 def _get_proxy(service, type):
@@ -40,7 +40,7 @@ def _setup_services():
     global long, int, arming, set_home, takeoff, land, trigger_control
     long = _get_proxy('command', CommandLong)
     int = _get_proxy('command_int', CommandInt)
-    arming = _get_proxy('arming', CommandBool)
+    arming = _get_proxy('arming', CommandArm)
     set_home = _get_proxy('set_home', CommandHome)
     takeoff = _get_proxy('takeoff', CommandTOL)
     land = _get_proxy('land', CommandTOL)
