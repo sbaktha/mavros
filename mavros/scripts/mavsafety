@@ -21,7 +21,7 @@ from mavros import command
 def _arm(args, state):
     # TODO: Set key to false value here for production
     try:
-        ret = command.arming(value=state, key="ok")
+        ret = command.arming(value=state, key=379.55)
     except rospy.ServiceException as ex:
         fault(ex)
 
